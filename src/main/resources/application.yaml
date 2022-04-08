@@ -6,5 +6,9 @@ spring:
       database: ${MONGO_DB_DATABASE:java-to-dev-api}
     redis:
       host: ${MONGO_DB_DATABASE:redis}
-    rabbitmq:
-      host: ${RABBIT_HOST:localhost}
+
+springdoc:
+  api-docs:
+    path: /gamma-seven/v3/api-docs
+  swagger-ui:
+    path: /docs
