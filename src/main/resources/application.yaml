@@ -1,0 +1,10 @@
+spring:
+  data:
+    mongodb:
+      host: ${MONGO_DB_HOST:mongo_db}
+      port: ${MONGO_DB_HOST:27017}
+      database: ${MONGO_DB_DATABASE:java-to-dev-api}
+    redis:
+      host: ${MONGO_DB_DATABASE:redis}
+    rabbitmq:
+      host: ${RABBIT_HOST:localhost}

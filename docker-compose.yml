@@ -1,0 +1,28 @@
+version: "3.7"
+services:
+  api_service:
+    build: .
+    restart: always
+    ports:
+      - 8080:8080
+    depends_on:
+      - mongo_db
+      - redis_db
+      - rabbitmq
+    environment:
+      RABBIT_HOST: rabbitmq
+  mongo_db:
+    image: "mongo:4.4.3"
+    restart: always
+    ports:
+      - 27017:27017
+  redis_db:
+    image: "redis:alpine"
+    hostname: redis
+    ports:
+      - "6379:6379"
+  rabbitmq:
+    image: rabbitmq:management
+    ports:
+      - "5672:5672" #JMS Port
+      - "15672:15672" #Management Port - default user:pass = guest:guest
